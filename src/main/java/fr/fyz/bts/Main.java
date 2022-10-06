@@ -17,6 +17,7 @@ import org.eclipse.jetty.servlet.ServletHandler;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 
+import fr.fyz.bts.elections.ElectionListener;
 import fr.fyz.bts.listeners.CommandsListener;
 import fr.fyz.bts.listeners.CounterListener;
 import fr.fyz.bts.listeners.LogListener;
@@ -76,7 +77,7 @@ public class Main {
 		}).start();
 
 		jda = JDABuilder.createDefault(credentials.discordToken)
-				.addEventListeners(/* new PluralListener(), */new CounterListener(), new VerificationListener(), new RolesListener(),
+				.addEventListeners(/* new PluralListener(), */new ElectionListener(), new CounterListener(), new VerificationListener(), new RolesListener(),
 						new ReadyListener(), new CommandsListener(), new WelcomeListener(),
 						new LogListener())
 				.disableCache(CacheFlag.ACTIVITY)

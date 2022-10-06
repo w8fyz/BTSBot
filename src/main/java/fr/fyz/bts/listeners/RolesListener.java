@@ -15,7 +15,7 @@ public class RolesListener extends ListenerAdapter {
 		return Main.getJDA().getGuildById("1021817762382888991").getRoles().stream()
 				.filter(r -> r.getColor() != null && r.getColor().equals(Color.decode("#e91e63"))).toList();
 	}
-	
+
 	public static List<Role> getOptionRole() {
 		return Main.getJDA().getGuildById("1021817762382888991").getRoles().stream()
 				.filter(r -> r.getColor() != null && r.getColor().equals(Color.decode("#3e46e2"))).toList();
@@ -35,16 +35,25 @@ public class RolesListener extends ListenerAdapter {
 						.queue();
 			}
 			event.reply("Jeux actualisés ! ✨").setEphemeral(true).queue();
-		} else if(event.getSelectMenu().getId().equals("options")) {
+		} else if (event.getSelectMenu().getId().equals("options")) {
 			getOptionRole().forEach(r -> {
 				if (event.getMember().getRoles().contains(r)) {
+					if (System.currentTimeMillis() < 1665165600000L) {
+						event.reply("Erreur : Le changement d'option n'est pas autorisé pendant les élections !")
+								.setEphemeral(true).queue();
+						return;
+					}
 					event.getGuild().removeRoleFromMember(event.getMember(), r).complete();
 				}
 			});
 
 			for (SelectOption option : event.getSelectedOptions()) {
-				event.getGuild().addRoleToMember(event.getMember(), event.getGuild().getRoleById(option.getValue()))
-						.queue();
+				if (System.currentTimeMillis() < 1665165600000L) {
+					event.getGuild().addRoleToMember(event.getMember(), event.getGuild().getRoleById(option.getValue()))
+							.queue();
+					return;
+				}
+
 			}
 			event.reply("Option actualisée ! ✨").setEphemeral(true).queue();
 		}

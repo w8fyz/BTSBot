@@ -4,11 +4,13 @@ import java.lang.reflect.Type;
 import java.util.Arrays;
 
 import com.google.common.reflect.TypeToken;
+
+import fr.fyz.bts.elections.Votes;
 @SuppressWarnings("serial")
 public enum DataType {
 	
 	
-	TEMP_PLAYER("pluralmodules", Object.class, new TypeToken<Object>() {}.getType());
+	VOTES("votes", Votes.class, new TypeToken<Votes>() {}.getType());
 	
 	private String src;
 	private Class<?> dataClass;

@@ -1,2 +1,4 @@
 target
-credentials.*
+credentials.json
+Candidates.*
+list

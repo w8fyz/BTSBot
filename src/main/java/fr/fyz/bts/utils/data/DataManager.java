@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 
 public class DataManager {
 
-	private static String base = "/data/";
+	private static String base = "data/";
 	
 	public static boolean exist(DataType type, String getter) {
 		File f = new File(base+type.getSrc() + "/" + getter);
@@ -49,6 +49,7 @@ public class DataManager {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		System.out.println(f.getAbsolutePath());
 		return f;
 	}
 
