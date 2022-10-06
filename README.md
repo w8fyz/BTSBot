@@ -1,9 +1,7 @@
-# LePetitBot ✨
+# BTSBot ✨
 
-<a href="https://discord.gg/FXS9zMm" target="_blank">
-<img src=https://img.shields.io/badge/discord-7289DA.svg?&style=for-the-badge&logo=discord&logoColor=white alt=discord style="margin-bottom: 5px;"/></a>
-
-LePetitBot est un bot discord utilisant les librairies suivantes :
+BTSBot est un bot discord utilisant les librairies suivantes :
+- [Java-JWT][java-jwt]
 - [JDA][jda]
 - [Jetty][jetty]
 - [Spotify -Web-Api-Java][spotify-api]
@@ -22,7 +20,9 @@ Exemple de credentials.json :
 {
   "spotify": "idApplicationSpotify",
   "spotifySecret": "secretApplicationSpotify",
-  "discordToken": "tokenDiscordBlablabla"
+  "discordToken": "tokenDiscordBlablabla",
+  "emailPassword": "motDePasseEmail",
+  "jwtToken": "tokenJWT"
 }
 ```
 en suite, il faudra modifier les différentes variables intéragissant avec sois un serveur spécifique (guild), sois un channel spécifique.
@@ -35,7 +35,7 @@ Vous avez le choix, utiliser l'ip "localhost" si vous exécuter le bot localemen
 Pour créer une commande il suffit de créer une nouvelle class qui doit implémenter **"ITCommand"**, puis l'enregistrer dans l'arraylist **"commands"**
 située dans **"CommandManager"**
 
-
+[java-jwt]: https://github.com/auth0/java-jwt
 [jda]: https://github.com/DV8FromTheWorld/JDA/
 [jetty]: https://github.com/eclipse/jetty.project
 [spotify-api]: https://github.com/spotify-web-api-java/spotify-web-api-java
