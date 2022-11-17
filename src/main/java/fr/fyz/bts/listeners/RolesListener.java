@@ -2,6 +2,7 @@ package fr.fyz.bts.listeners;
 
 import java.awt.Color;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import fr.fyz.bts.Main;
 import net.dv8tion.jda.api.entities.Role;
@@ -13,12 +14,12 @@ public class RolesListener extends ListenerAdapter {
 
 	public static List<Role> getGamesRole() {
 		return Main.getJDA().getGuildById("1021817762382888991").getRoles().stream()
-				.filter(r -> r.getColor() != null && r.getColor().equals(Color.decode("#e91e63"))).toList();
+				.filter(r -> r.getColor() != null && r.getColor().equals(Color.decode("#e91e63"))).collect(Collectors.toList());
 	}
 
 	public static List<Role> getOptionRole() {
 		return Main.getJDA().getGuildById("1021817762382888991").getRoles().stream()
-				.filter(r -> r.getColor() != null && r.getColor().equals(Color.decode("#3e46e2"))).toList();
+				.filter(r -> r.getColor() != null && r.getColor().equals(Color.decode("#3e46e2"))).collect(Collectors.toList());
 	}
 
 	@Override
