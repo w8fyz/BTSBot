@@ -1,11 +1,7 @@
 package fr.fyz.bts.commands.list;
 
 
-import java.awt.Color;
-
 import fr.fyz.bts.commands.ITCommand;
-import fr.fyz.bts.elections.Candidates;
-import fr.fyz.bts.elections.ElectionManager;
 import fr.fyz.bts.enums.RAINBOW;
 import fr.fyz.bts.enums.Rules;
 import fr.fyz.bts.listeners.RolesListener;
@@ -109,33 +105,6 @@ public class CommandSetup implements ITCommand {
 					break;
 				case "annonceGithub":
 					txt.sendMessage("C'est trop la classe, merci Fyz 😎").queue();
-					break;
-				case "election_slam":
-					EmbedBuilder eb4 = new EmbedBuilder();
-					Button btn2;
-					for(Candidates c : Candidates.getCandidates(false)) {
-						eb4.setTitle("Candidat : "+c.getName());
-						eb4.setColor(Color.blue);
-						eb4.setThumbnail(c.getIMG());
-						eb4.setDescription(c.getParagraph());
-						btn2 = Button.primary("vote_"+c.getID(), "Voter pour cette personne");
-						txt.sendMessageEmbeds(eb4.build()).setActionRow(btn2).queue();
-					}
-					break;
-				case "election_sisr":
-					EmbedBuilder eb5 = new EmbedBuilder();
-					Button btn3;
-					for(Candidates c : Candidates.getCandidates(true)) {
-						eb5.setTitle("Candidat : "+c.getName());
-						eb5.setColor(Color.blue);
-						eb5.setThumbnail(c.getIMG());
-						eb5.setDescription(c.getParagraph());
-						btn3 = Button.primary("vote_"+c.getID(), "Voter pour cette personne");
-						txt.sendMessageEmbeds(eb5.build()).setActionRow(btn3).queue();
-					}
-					break;
-				case "election_result":
-					ElectionManager.sendResults(txt);
 					break;
 				default:
 					event.getChannel().sendMessage("Erreur, setup introuvable !").queue();

@@ -34,28 +34,22 @@ public class RolesListener extends ListenerAdapter {
 				event.getGuild().addRoleToMember(event.getMember(), event.getGuild().getRoleById(option.getValue()))
 						.queue();
 			}
-			event.reply("Jeux actualisés ! ✨").setEphemeral(true).queue();
+			event.reply("Jeux actualis�s !").setEphemeral(true).queue();
 		} else if (event.getSelectMenu().getId().equals("options")) {
 			getOptionRole().forEach(r -> {
 				if (event.getMember().getRoles().contains(r)) {
-					if (System.currentTimeMillis() < 1665165600000L) {
-						event.reply("Erreur : Le changement d'option n'est pas autorisé pendant les élections !")
-								.setEphemeral(true).queue();
-						return;
-					}
+
 					event.getGuild().removeRoleFromMember(event.getMember(), r).complete();
 				}
 			});
 
 			for (SelectOption option : event.getSelectedOptions()) {
-				if (System.currentTimeMillis() < 1665165600000L) {
-					event.getGuild().addRoleToMember(event.getMember(), event.getGuild().getRoleById(option.getValue()))
-							.queue();
-					return;
-				}
+				event.getGuild().addRoleToMember(event.getMember(), event.getGuild().getRoleById(option.getValue()))
+						.queue();
+				return;
 
 			}
-			event.reply("Option actualisée ! ✨").setEphemeral(true).queue();
+			event.reply("Option actualis�es !").setEphemeral(true).queue();
 		}
 	}
 

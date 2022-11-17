@@ -14,9 +14,10 @@ public class WelcomeListener extends ListenerAdapter {
 
 	@Override
 	public void onGuildMemberJoin(GuildMemberJoinEvent event) {
-		
 		TextChannel bvn = Main.getJDA().getTextChannelById(WELCOME_CHANNEL_ID);
 
+		if(!bvn.getGuild().getId().equals(event.getGuild().getId())) return;
+		
 		RAINBOW color_set = RAINBOW.getNextEmote(RAINBOW.getLastEmote(bvn));
 
 		EmbedBuilder eb = new EmbedBuilder();

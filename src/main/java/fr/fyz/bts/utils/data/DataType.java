@@ -4,13 +4,11 @@ import java.lang.reflect.Type;
 import java.util.Arrays;
 
 import com.google.common.reflect.TypeToken;
-
-import fr.fyz.bts.elections.Votes;
 @SuppressWarnings("serial")
 public enum DataType {
 	
 	
-	VOTES("votes", Votes.class, new TypeToken<Votes>() {}.getType());
+	VOTES("sample", Object.class, new TypeToken<Object>() {}.getType());
 	
 	private String src;
 	private Class<?> dataClass;
