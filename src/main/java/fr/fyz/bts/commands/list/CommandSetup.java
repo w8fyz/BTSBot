@@ -25,7 +25,7 @@ public class CommandSetup implements ITCommand {
 
 	@Override
 	public String getDescription() {
-		return "Permet le setup des channels utilisés";
+		return "Permet le setup des channels";
 	}
 
 	@Override

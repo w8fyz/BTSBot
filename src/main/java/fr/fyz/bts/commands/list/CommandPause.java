@@ -38,7 +38,7 @@ public class CommandPause implements ITCommand {
 					eb.setColor(RAINBOW.RED.getColor());
 					eb.setTimestamp(Instant.now());
 					eb.setDescription("Erreur.");
-					eb.setTitle("Tu n'as pas la permission de faire Ã§a !");
+					eb.setTitle("Tu n'as pas la permission de faire ça !");
 					event.replyEmbeds(eb.build()).setEphemeral(true).queue();
 					return;
 				}
@@ -49,7 +49,7 @@ public class CommandPause implements ITCommand {
 					EmbedBuilder eb = new EmbedBuilder();
 					eb.setColor(RAINBOW.YELLOW.getColor());
 					eb.setTimestamp(Instant.now());
-					eb.setDescription("Le lecteur a Ã©tÃ© mis en pause.");
+					eb.setDescription("Le lecteur a été mis en pause.");
 					eb.setTitle("Lecteur mis en pause");
 					event.replyEmbeds(eb.build()).setEphemeral(true).queue();
 					PlayerManager.getInstance().getMusicManager(event.getGuild()).audioPlayer.setPaused(true);
@@ -58,7 +58,7 @@ public class CommandPause implements ITCommand {
 					eb.setColor(RAINBOW.YELLOW.getColor());
 					eb.setTimestamp(Instant.now());
 					eb.setDescription("Le lecteur n'est plus en pause.");
-					eb.setTitle("Pause du lecteur dÃ©sactivÃ©e");
+					eb.setTitle("Pause du lecteur désactivée !");
 					event.replyEmbeds(eb.build()).setEphemeral(true).queue();
 					PlayerManager.getInstance().getMusicManager(event.getGuild()).audioPlayer.setPaused(false);
 				}

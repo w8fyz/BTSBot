@@ -23,7 +23,7 @@ public class WelcomeListener extends ListenerAdapter {
 		EmbedBuilder eb = new EmbedBuilder();
 		eb.setTitle("Bienvenue ! " + color_set.getEmoji());
 		eb.setColor(color_set.getColor());
-		eb.setDescription("Bienvenue Ã  toi "+event.getMember().getAsMention()+" sur le serveur ! N'hÃ©site pas Ã  faire un tour dans le salon <#1021838481015709847> !");
+		eb.setDescription("Bienvenue à toi "+event.getMember().getAsMention()+" sur le serveur ! N'hésite pas à faire un tour dans le salon <#1021838481015709847> !");
 		bvn.sendMessageEmbeds(eb.build()).queue();
 	}
 

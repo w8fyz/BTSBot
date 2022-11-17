@@ -25,7 +25,7 @@ public class CommandQueue implements ITCommand {
 
 	@Override
 	public String getDescription() {
-		return "Permet d'obtenir la liste des musiques qui vont Ãªtre jouÃ©es";
+		return "Permet d'obtenir la liste des musiques qui vont être jouées";
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class CommandQueue implements ITCommand {
 			public void onCommand(SlashCommandInteractionEvent event) {
 				
 				Button next = Button.primary("next", "Suivante");
-				Button previous = Button.primary("previous", "PrÃ©cÃ©dente");
+				Button previous = Button.primary("previous", "Précédente");
 				
 				event.replyEmbeds(queueEmbed(event.getGuild(), 1).build()).addActionRow(previous, next).setEphemeral(true).queue();
 			}

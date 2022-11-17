@@ -16,7 +16,7 @@ public class ReadyListener extends ListenerAdapter {
 
 	@Override
 	public void onReady(ReadyEvent event) {
-		Main.log("BTS Bot InitialisÃ©.");
+		Main.log("BTS Bot Initialisé.");
 		CommandManager.init();
 		new Timer().schedule(new MOTDTask(), Date.from(Instant.now()), TimeUnit.MINUTES.toMillis(2));
 		new Timer().schedule(new MusicCheckerTask(), Date.from(Instant.now()), TimeUnit.MINUTES.toMillis(2));

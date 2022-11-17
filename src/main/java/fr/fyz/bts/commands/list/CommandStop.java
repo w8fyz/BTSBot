@@ -38,7 +38,7 @@ public class CommandStop implements ITCommand{
 					eb.setColor(RAINBOW.RED.getColor());
 					eb.setTimestamp(Instant.now());
 					eb.setDescription("Erreur.");
-					eb.setTitle("Tu n'as pas la permission de faire √ßa !");
+					eb.setTitle("Tu n'as pas la permission de faire Áa !");
 					event.replyEmbeds(eb.build()).setEphemeral(true).queue();
 					return;
 				}
@@ -49,7 +49,7 @@ public class CommandStop implements ITCommand{
 				EmbedBuilder eb = new EmbedBuilder();
 				eb.setColor(RAINBOW.YELLOW.getColor());
 				eb.setTimestamp(Instant.now());
-				eb.setDescription("Le lecteur a √©t√© stopp√©.");
+				eb.setDescription("Le lecteur a ÈtÈ stoppÈ.");
 				eb.setTitle("Lecteur stopp√©");
 				event.replyEmbeds(eb.build()).setEphemeral(true).queue();
 			}

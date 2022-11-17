@@ -36,8 +36,8 @@ public class CommandClearQueue implements ITCommand{
 				EmbedBuilder eb = new EmbedBuilder();
 				eb.setColor(RAINBOW.YELLOW.getColor());
 				eb.setTimestamp(Instant.now());
-				eb.setDescription("La file d'attente a Ã©tÃ© supprimÃ©e.");
-				eb.setTitle("File d'attente supprimÃ©e");
+				eb.setDescription("La file d'attente a été supprimée.");
+				eb.setTitle("File d'attente supprimée");
 				event.replyEmbeds(eb.build()).setEphemeral(true).queue();
 			}
 		};

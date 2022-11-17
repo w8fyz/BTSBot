@@ -14,7 +14,7 @@ public class CommandCode implements ITCommand {
 
 	@Override
 	public String getDescription() {
-		return "Permet d'Ã©xecuter du code et d'en rÃ©cupÃ©rer le rÃ©sultat";
+		return "Permet d'éxecuter du code et d'en récupérer le résultat";
 	}
 
 	@Override

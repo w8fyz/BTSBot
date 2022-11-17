@@ -39,8 +39,8 @@ public class CommandForceSkip implements ITCommand{
 				EmbedBuilder eb = new EmbedBuilder();
 				eb.setColor(RAINBOW.YELLOW.getColor());
 				eb.setTimestamp(Instant.now());
-				eb.setDescription("La musique actuelle a Ã©tÃ© forceskip, lancement de la prochaine.");
-				eb.setTitle("Musique suivante lancÃ©e");
+				eb.setDescription("La musique actuelle a été forceskip, lancement de la prochaine.");
+				eb.setTitle("Musique suivante lancée");
 				event.replyEmbeds(eb.build()).queue();
 			}
 		};

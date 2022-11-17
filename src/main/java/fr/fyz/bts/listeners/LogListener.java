@@ -58,7 +58,7 @@ public class LogListener extends ListenerAdapter{
 		
 		EmbedBuilder eb = new EmbedBuilder();
 		eb.setTitle(event.getMember().getUser().getAsTag());
-		eb.setDescription("A quittÃ© le channel "+event.getChannelLeft().getAsMention());
+		eb.setDescription("A quitté le channel "+event.getChannelLeft().getAsMention());
 		eb.setColor(Color.red);
 		eb.setTimestamp(Instant.now());
 		eb.setFooter("Author ID : "+event.getMember().getId(), event.getMember().getAvatarUrl());
@@ -71,7 +71,7 @@ public class LogListener extends ListenerAdapter{
 		
 		EmbedBuilder eb = new EmbedBuilder();
 		eb.setTitle(event.getMember().getUser().getAsTag());
-		eb.setDescription("A Ã©tÃ© move du channel "+event.getChannelLeft().getAsMention()+" au channel "+event.getChannelJoined().getAsMention());
+		eb.setDescription("A été move du channel "+event.getChannelLeft().getAsMention()+" au channel "+event.getChannelJoined().getAsMention());
 		eb.setColor(Color.yellow);
 		eb.setTimestamp(Instant.now());
 		eb.setFooter("Author ID : "+event.getMember().getId(), event.getMember().getAvatarUrl());

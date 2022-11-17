@@ -25,7 +25,7 @@ public class VerificationListener extends ListenerAdapter {
 					TextInputStyle.SHORT);
 			textInput.setPlaceholder("john.doe@efrei.net");
 
-			Modal modal = Modal.create("email_verification", "VÃ©rification de l'adresse mail")
+			Modal modal = Modal.create("email_verification", "Vérification de l'adresse mail")
 					.addActionRows(ActionRow.of(textInput.build())).build();
 			event.replyModal(modal).queue();
 		}
@@ -38,12 +38,12 @@ public class VerificationListener extends ListenerAdapter {
 			String email = event.getValue("email").getAsString();
 
 			if (!email.contains("@efrei.net")) {
-				event.reply("L'adresse mail renseignÃ©e n'est pas une adresse mail d'Efrei !").setEphemeral(true).queue();
+				event.reply("L'adresse mail renseignée n'est pas une adresse mail d'Efrei !").setEphemeral(true).queue();
 				return;
 			}
 
 			if(cooldown_sending.containsKey(event.getMember()) && System.currentTimeMillis()-cooldown_sending.get(event.getMember()) < 180000) {
-				event.reply("Un mail a Ã©tÃ© envoyÃ© il y a moins de 3 minutes, patiente un peu avant de faire une nouvelle demande.").setEphemeral(true).queue();
+				event.reply("Un mail a été envoyé il y a moins de 3 minutes, patiente un peu avant de faire une nouvelle demande.").setEphemeral(true).queue();
 				return;
 			}
 			

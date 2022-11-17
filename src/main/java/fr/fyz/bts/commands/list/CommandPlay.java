@@ -47,7 +47,7 @@ public class CommandPlay implements ITCommand{
 	                eb.setColor(RAINBOW.RED.getColor());
 	                eb.setTimestamp(Instant.now());
 	                eb.setTitle("Erreur");
-	                eb.setDescription("Il faut être dans un salon vocal pour utiliser cette commande !");
+	                eb.setDescription("Il faut �tre dans un salon vocal pour utiliser cette commande !");
 	                event.replyEmbeds(eb.build()).setEphemeral(true).queue();
 					return;
 				}
@@ -63,7 +63,7 @@ public class CommandPlay implements ITCommand{
 				if(!isUrl(link)) {
 					link = "ytsearch:"+link+" audio";
 				}
-				event.reply("**🤔 Recherche en cours...**").queue();
+				event.reply("**Recherche en cours...**").queue();
 				PlayerManager.getInstance().loadAndPlay(event, event.getTextChannel(), link, event.getOption("nom").getAsString());
 			}
 			

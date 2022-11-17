@@ -30,7 +30,7 @@ public class CommandSong implements ITCommand{
 
 	@Override
 	public OptionData[] getOptions() {
-		return new OptionData[] {new OptionData(OptionType.STRING, "musique", "Nom de la musique Ã  rechercher sur Spotify", true)};
+		return new OptionData[] {new OptionData(OptionType.STRING, "musique", "Nom de la musique à rechercher sur Spotify", true)};
 	}
 
 	@Override

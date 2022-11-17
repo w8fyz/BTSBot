@@ -8,8 +8,8 @@ import net.dv8tion.jda.api.entities.Activity;
 
 public class MOTDTask extends TimerTask {
 
-	private static String[] presences = { "Rocket League", "Minecraft", "Regarder un live", "RÃ©viser SISR",
-			"RÃ©viser SLAM", "Utiliser Kali", "RootMe", "un CTF", "Configurer un Pare-Feu" };
+	private static String[] presences = { "Rocket League", "Minecraft", "Regarder un live", "Réviser SISR",
+			"Réviser SLAM", "Utiliser Kali", "RootMe", "un CTF", "Configurer un Pare-Feu" };
 
 	@Override
 	public void run() {

@@ -46,7 +46,7 @@ public class CommandSkip implements ITCommand {
 						EmbedBuilder eb = new EmbedBuilder();
 						eb.setColor(RAINBOW.RED.getColor());
 						eb.setTimestamp(Instant.now());
-						eb.setDescription("Vous devez Ãªtre dans le mÃªme salon vocal que le bot pour effectuer cette action.");
+						eb.setDescription("Vous devez être dans le même salon vocal que le bot pour effectuer cette action.");
 						eb.setTitle("Erreur");
 						event.replyEmbeds(eb.build()).setEphemeral(true).queue();
 						return;
