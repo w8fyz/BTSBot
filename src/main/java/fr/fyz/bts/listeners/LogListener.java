@@ -25,6 +25,8 @@ public class LogListener extends ListenerAdapter{
 		}
 		TextChannel txt = Main.getJDA().getTextChannelById(MESSAGES_LOG);
 		
+		if(!txt.getGuild().getId().equals(event.getGuild().getId())) return;
+		
 		EmbedBuilder eb = new EmbedBuilder();
 		eb.setTitle(event.getAuthor().getAsTag(), event.getMessage().getJumpUrl());
 		eb.setDescription(event.getMessage().getContentRaw());
@@ -43,6 +45,8 @@ public class LogListener extends ListenerAdapter{
 	public void onGuildVoiceJoin(GuildVoiceJoinEvent event) {
 		TextChannel txt = Main.getJDA().getTextChannelById(VOICE_LOG);
 		
+		if(!txt.getGuild().getId().equals(event.getGuild().getId())) return;
+		
 		EmbedBuilder eb = new EmbedBuilder();
 		eb.setTitle(event.getMember().getUser().getAsTag());
 		eb.setDescription("A rejoins le channel "+event.getChannelJoined().getAsMention());
@@ -56,9 +60,12 @@ public class LogListener extends ListenerAdapter{
 	public void onGuildVoiceLeave(GuildVoiceLeaveEvent event) {
 		TextChannel txt = Main.getJDA().getTextChannelById(VOICE_LOG);
 		
+		if(!txt.getGuild().getId().equals(event.getGuild().getId())) return;
+		
+		
 		EmbedBuilder eb = new EmbedBuilder();
 		eb.setTitle(event.getMember().getUser().getAsTag());
-		eb.setDescription("A quitté le channel "+event.getChannelLeft().getAsMention());
+		eb.setDescription("A quittÃ© le channel "+event.getChannelLeft().getAsMention());
 		eb.setColor(Color.red);
 		eb.setTimestamp(Instant.now());
 		eb.setFooter("Author ID : "+event.getMember().getId(), event.getMember().getAvatarUrl());
@@ -69,9 +76,11 @@ public class LogListener extends ListenerAdapter{
 	public void onGuildVoiceMove(GuildVoiceMoveEvent event) {
 		TextChannel txt = Main.getJDA().getTextChannelById(VOICE_LOG);
 		
+		if(!txt.getGuild().getId().equals(event.getGuild().getId())) return;
+		
 		EmbedBuilder eb = new EmbedBuilder();
 		eb.setTitle(event.getMember().getUser().getAsTag());
-		eb.setDescription("A été move du channel "+event.getChannelLeft().getAsMention()+" au channel "+event.getChannelJoined().getAsMention());
+		eb.setDescription("A Ã©tÃ© move du channel "+event.getChannelLeft().getAsMention()+" au channel "+event.getChannelJoined().getAsMention());
 		eb.setColor(Color.yellow);
 		eb.setTimestamp(Instant.now());
 		eb.setFooter("Author ID : "+event.getMember().getId(), event.getMember().getAvatarUrl());
